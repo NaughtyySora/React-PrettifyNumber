@@ -1,2 +1,6 @@
-# React-PrettifyNumber
-Prettify Number component, Tooltip
+# React Prettify Number
+
+## Components:
+- Number Component
+- Tooltip
+- parsers, formatters
