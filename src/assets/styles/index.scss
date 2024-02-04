@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap");
+
+* {
+  margin: 0;
+  left: 0;
+  box-sizing: border-box;
+  font-family: "Readex Pro", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --blue: rgba(28, 131, 227, 0.972);
+  --green: #0dce90;
+  --red: #ff3263;
+  
+  --fSize20: 1.25rem;
+  --fSize16: 1rem;
+  --fSize14: 0.875rem;
+  --fSize12: 0.75rem;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  height: 400px;
+  width: 600px;
+  font-size: 2rem;
+
+  .PrettyNumber {
+    display: block;
+    color: var(--blue);
+  }
+
+  .PrettyNumber-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 50%;
+    margin: 0.75rem 0;
+  }
+}

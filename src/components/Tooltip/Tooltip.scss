@@ -1,0 +1,93 @@
+.Tooltip {
+  --size: 14px;
+
+  &.arrow-white {
+    &::after {
+      background-color: var(--white) !important;
+    }
+  }
+
+  &.arrow-black {
+    &::after {
+      background-color: var(--black) !important;
+    }
+  }
+
+  &.fixed {
+    &::before,
+    &::after {
+      position: fixed;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &.active {
+      &::before {
+        display: var(--display);
+        top: var(--y);
+        left: var(--x);
+        transform: translate(-50%, -50%);
+      }
+
+      &:after {
+        display: var(--display);
+        top: calc(var(--y) + var(--size));
+        left: var(--x);
+      }
+    }
+  }
+
+  &.hidden {
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
+
+  &::before,
+  &::after {
+    display: none;
+    position: absolute;
+    left: 50%;
+  }
+
+  &::before {
+    content: attr(data-value);
+    align-items: center;
+    top: -100%;
+    transform: translate(-50%, -50%);
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--white);
+    font-weight: 700;
+    font-size: var(--fSize20);
+    min-width: 75px;
+    word-break: keep-all;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  &::after {
+    content: "";
+    top: -45%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 0.1rem;
+    width: var(--size);
+    height: var(--size);
+    z-index: 1;
+  }
+
+  &:hover {
+    &::after,
+    &::before {
+      display: flex;
+    }
+  }
+}
